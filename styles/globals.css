@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    background-color: #202A44
+    /* #efdcb18a */
+}
+
+h2 {
+  font-family: 'Ovo', serif;
+  font-color: 'white'
+}
+
+h1 {
+    /* font-family: 'Prata', serif; */
+    font-size: 1.875rem;
+    font-color: 'white'
+}
+
+p {
+  font-family: 'Ovo', serif;
+  font-color: 'white'
+}
+

@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'text': ["Ovo", 'serif']
+        'text': ["Ovo", 'serif'],
+        'title': ["Prata", 'serif']
       }
     },
   },
