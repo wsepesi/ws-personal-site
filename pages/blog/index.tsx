@@ -4,7 +4,7 @@ import SiteBase from "@/components/SiteBase"
 const Blog = () => {
     return (
         <SiteBase title="Blog">
-            <p className="text-white">Coming soon</p>
+            <p className="">Coming soon</p>
             {/* <Link href="/blog/hello">Test</Link> */}
             {/* {allBlogs
                 .sort((a, b) => {

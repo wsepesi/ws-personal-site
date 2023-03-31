@@ -8,8 +8,10 @@ export default function Home() {
         <title>William [dot] Computer</title>
       </Head>
       <SiteBase title="Home">
-        <p className="font-medium text-xl pb-1 text-white">Hello. My name is William.</p>
-        <p className="text-white">I&apos;m a ML and software engineer. I&apos;m currently setting this site up, so watch this space.</p>
+        <p className="font-medium text-xl pb-1">Hello. My name is William.</p>
+        <p className="">
+          I&apos;m a ML and software engineer. Work in progress, watch this space.
+        </p>
       </SiteBase>
     </>
   )

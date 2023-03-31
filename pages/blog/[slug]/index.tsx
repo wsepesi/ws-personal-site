@@ -1,5 +1,5 @@
 // import Balancer from 'react-wrap-balancer';
-import { Mdx } from '@/components/mdx';
+// import { Mdx } from '@/components/mdx';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
