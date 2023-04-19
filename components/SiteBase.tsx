@@ -38,7 +38,7 @@ const SiteBase = (props: PageProps) => {
                 )}
             </div>
             {/* <div className="bg-[url('https://www.columbia.edu/~ey2172/gentle_10.jpg')] min-w-[60vw] min-h-[80vh] shadow-sm"> */}
-            <div className="h-[95vh] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black ">
+            <div className="h-[95vh] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-scroll">
                 <div className="px-5 pb-5 pt-2">
                     <h1 className="font-title py-2">{props.title}</h1>
                     {props.children}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import { allPosts, type Post } from 'contentlayer/generated'
+import SiteBase from '@/components/SiteBase'
 
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.url)
@@ -27,7 +28,17 @@ type PostProps = {
 const PostLayout = ({ post }: PostProps) => {
   return (
     <>
-      <Head>
+      <SiteBase title={post.title}>
+        <article>
+          <div>
+            <time dateTime={post.date} className="text-sm text-slate-600">
+              {format(parseISO(post.date), 'LLLL d, yyyy')}
+            </time>
+          </div>
+          <div className="cl-post-body" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        </article>
+      </SiteBase>
+      {/* <Head>
         <title>{post.title}</title>
       </Head>
       <article className="mx-auto max-w-2xl py-16">
@@ -43,7 +54,7 @@ const PostLayout = ({ post }: PostProps) => {
           </time>
         </div>
         <div className="cl-post-body" dangerouslySetInnerHTML={{ __html: post.body.html }} />
-      </article>
+      </article> */}
     </>
   )
 }

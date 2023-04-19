@@ -1,29 +1,40 @@
 import Link from "next/link"
 import SiteBase from "@/components/SiteBase"
+import { compareDesc, format, parseISO } from 'date-fns'
+import { allPosts, type Post } from 'contentlayer/generated'
 
-const Blog = () => {
+export async function getStaticProps() {
+  const posts = allPosts.sort((a: Post, b: Post) => {
+    return compareDesc(new Date(a.date), new Date(b.date))
+  })
+  return { props: { posts } }
+}
+
+function PostCard(post: Post) {
+  return (
+    <div className="mb-6">
+      <time dateTime={post.date} className="block text-sm text-slate-600">
+        {format(parseISO(post.date), 'LLLL d, yyyy')}
+      </time>
+      <h2 className="text-lg">
+        <Link href={post.url}>
+          <p className="text-blue-700 hover:text-blue-900">{post.title}</p>
+        </Link>
+      </h2>
+    </div>
+  )
+}
+
+type Props = {
+    posts: Post[]
+}
+
+const Blog = ({posts}: Props) => {
     return (
         <SiteBase title="Blog">
-            <p className="">Coming soon</p>
-            {/* <Link href="/blog/hello">Test</Link> */}
-            {/* {allBlogs
-                .sort((a, b) => {
-                if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-                    return -1;
-                }
-                return 1;
-                })
-                .map((post) => (
-                <Link
-                    key={post.slug}
-                    className="flex flex-col space-y-1 mb-4"
-                    href={`/blog/${post.slug}`}
-                >
-                    <div className="w-full flex flex-col">
-                    <p>{post.title}</p>
-                    </div>
-                </Link>
-                ))} */}
+            {posts.map((post, idx) => (
+                <PostCard key={idx} {...post} />
+            ))}
         </SiteBase>
     )
 }
