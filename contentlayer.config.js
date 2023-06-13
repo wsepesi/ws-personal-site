@@ -16,6 +16,11 @@ export const Post = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    short: {
+      type: 'boolean',
+      description: 'Is short-style post?',
+      required: true,
+    }
   },
   computedFields: {
     url: {
