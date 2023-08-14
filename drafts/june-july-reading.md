@@ -1,13 +1,13 @@
 ---
 title: June/July Reading
-date: 2023-07-07
+date: 2023-07-31
 short: true
 ---
 
 ### Books
 
 - A Moveable Feast, Hemingway
-- Dune Messiah
+- Dune Messiah, Herbert
 
 ### Papers
 
@@ -16,4 +16,5 @@ short: true
 
 ### Blogs
 
-- Fundamental Theorem of RL Lecture Notes, Csaba Szepesvári
+- [Fundamental Theorem of RL Lecture Notes, Csaba Szepesvári](https://rltheory.github.io/lecture-notes/planning-in-mdps/lec2/)
+- [What do I think about biometric proof of personhood?, Vitalik](https://vitalik.ca/general/2023/07/24/biometric.html)
