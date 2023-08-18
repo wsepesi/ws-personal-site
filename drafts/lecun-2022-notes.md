@@ -37,3 +37,10 @@ short: true
 - writeable memory of world state > state vector is simpler, just update diff
 
 ### Designing and Training the Actor
+
+- actor should 1. infer optimal actions given predictions, 2. produce latent variable configs, 3. train policy networks for mode-1 actions
+
+### Designing the Configurator
+
+- Main controller of the agent, controls all other modules
+- Assigns subgoals and configures cost module for said goals
