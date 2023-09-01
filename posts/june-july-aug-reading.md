@@ -1,0 +1,22 @@
+---
+title: June/July/August Reading
+date: 2023-08-31
+short: true
+---
+
+### Books
+
+- A Moveable Feast, Hemingway
+- Dune Messiah, Herbert
+- Children of Dune, Herbert
+
+### Papers
+
+- [A Path Towards Autonomous Machine Intelligence](https://openreview.net/pdf?id=BZ5a1r-kVsf), Yann LeCun, 2022
+- [SequenceMatch: Imitation Learning for Autoregressive Sequence Modelling with Backtracking](https://arxiv.org/pdf/2306.05426.pdf), Cundy and Ermon, 2023
+- [Confidence-Building Measures for Artificial Intelligence: Workshop Proceedings](https://arxiv.org/pdf/2308.00862.pdf), 2023
+
+### Blogs
+
+- [Fundamental Theorem of RL Lecture Notes, Csaba Szepesvári](https://rltheory.github.io/lecture-notes/planning-in-mdps/lec2/)
+- [What do I think about biometric proof of personhood?, Vitalik](https://vitalik.ca/general/2023/07/24/biometric.html)
