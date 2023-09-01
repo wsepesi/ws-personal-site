@@ -35,5 +35,3 @@ short: true
 - environment naturally stochastic (either aleatoric or epistmetically so) -> moved into the latent variable
   - different types of prediction may also employ different architecture, e.g. short term in video could use local feature vectors, while long term could use transformers
 - writeable memory of world state > state vector is simpler, just update diff
-
-### Designing and Training the Actor
