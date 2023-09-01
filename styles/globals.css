@@ -24,3 +24,19 @@ p {
   font-color: 'white'
 }
 
+h3 {
+  font-family: 'Ovo', serif;
+  font-color: 'white';
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+ul {
+  font-family: 'Ovo', serif;
+  font-color: 'white'
+}
+
+li {
+  font-family: 'Ovo', serif;
+  font-color: 'white'
+}
