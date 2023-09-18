@@ -2,9 +2,13 @@
 
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `**/*.mdx`,
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -33,4 +37,8 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
+  mdx: {
+    rehypePlugins: [rehypeKatex],
+    remarkPlugins: [remarkMath],
+  }
 })

@@ -17,6 +17,10 @@ short: true
 
 ### Designing and Training the World Model
 
+$z \in \mathcal{Z}$ inline test
+
+$$z \in \mathcal{Z}$$
+
 - train the model thru SSL; but the problem is undersampling the true underlying environment thru training data. unfortunately we can't just simulate like normal RL since we don't have defined full MDP
 - energy-based models (EBM) measure compatability measures $F(x,y)$ > predict y from x, since y \in Y, set of possible valid answers
 - model needs to represent multiple predictions, can use latent variables to do so (LVEBM) E_w(x,y,z). given (x,y), find \hat{z} = \argmin_{z \in \mathcal{Z}} E_w(x,y,z). Then F_w(x,y) = E_w(x,y,\hat{z})
