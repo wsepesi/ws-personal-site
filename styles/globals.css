@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 :root {
-    background-color: #efdcb18a
-    /* #202A44 */
-    /* #efdcb18a */
+    background-color: #efdcb18a;
+    /* background-color: #f5e3b1; */
+    /* background-color: #fffbe7; */
+    /* background-image: url("https://transparenttextures.com/patterns/cream-paper.png"); */
+    /* background-image: url("https://transparenttextures.com/patterns/white-brushed.png"); */
 }
 
 h2 {
@@ -39,4 +41,18 @@ ul {
 li {
   font-family: 'Ovo', serif;
   font-color: 'white'
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Target Firefox */
+* {
+  scrollbar-color: transparent transparent; /* thumb and track color */
+}
+
+/* Target Internet Explorer and Edge */
+*::-ms-scrollbar-track {
+  background: transparent;
 }

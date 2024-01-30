@@ -1,5 +1,7 @@
 import Head from "next/head"
+import Image from "next/image"
 import Link from "next/link"
+import logo from "../public/favicon.ico"
 import { usePathname } from "next/navigation"
 
 const directory = {
@@ -32,7 +34,8 @@ const SiteBase = (props: PageProps) => {
                 />
             </Head>
             <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[15vw] items-center sm:items-start">
-                <div className="sm:min-w-[7vw] sm:pt-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:h-[30vh] w-[50vw] sm:w-auto mx-[3vw] sm:mx-0"> 
+                
+                <div className="sm:min-w-[7vw] sm:pt-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:h-[30vh] w-[50vw] sm:w-auto mx-[3vw] sm:mx-0">
                     {Object.entries(directory).map(([path, { name }]) => {
                         const here = (path !== '/' && location.includes(path)) || location == path //`/${location}` === path
                         return (
@@ -46,7 +49,7 @@ const SiteBase = (props: PageProps) => {
                         )}
                     )}
                 </div>
-                <div className="h-[95vh] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-scroll">
+                <div className="h-[95vh] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto">
                     <div className="px-5 pb-5 pt-2">
                         <h1 className="font-title py-2">{props.title}</h1>
                         {props.children}

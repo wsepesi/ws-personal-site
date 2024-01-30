@@ -13,8 +13,11 @@ module.exports = {
       fontFamily: {
         'text': ["Ovo", 'serif'],
         'title': ["Prata", 'serif']
-      }
+      },
+      // backgroundImage: {
+      //   'paper': "url('https://transparenttextures.com/patterns/white-brushed.png')"
+      // }
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }
