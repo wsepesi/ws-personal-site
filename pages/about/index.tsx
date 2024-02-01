@@ -1,9 +1,16 @@
+import { RetroPhoto } from "@/components/retro-photo"
 import SiteBase from "@/components/SiteBase"
+import me from '../../photos/me.png'
 
 const About = () => {
     return (
         <SiteBase title="About">
-            <p className="">Coming soon</p>
+           <div className="flex flex-col-reverse md:flex-row">
+                <p>Coming soon, watch this space.</p>
+                <div className="flex-1">
+                {/* <RetroPhoto src={me} />  */}
+                </div>
+            </div>
         </SiteBase>
     )
 }

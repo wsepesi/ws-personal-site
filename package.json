@@ -28,6 +28,7 @@
     "react-dom": "18.2.0",
     "rehype-katex": "^6.0.3",
     "remark-math": "^5.1.1",
+    "sharp": "^0.33.2",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.0.2",
