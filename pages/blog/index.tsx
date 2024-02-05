@@ -33,7 +33,7 @@ const Blog = ({posts}: Props) => {
     return (
         <SiteBase title="Blog">
           <div className="flex flex-row">
-            <div className="w-[30vw]">
+            <div className="mr-[25vw]">
               <h3>Blog</h3>
               <hr />
               {posts.filter(post => !post.short).map((post, idx) => (
@@ -43,7 +43,7 @@ const Blog = ({posts}: Props) => {
                 <PostCard key={idx} {...post} />
               ))} */}
             </div>
-            <div className="w-[30vw]">
+            <div className="">
               <h3>Short Thoughts</h3>
               <hr />
               {/* {posts.map((post, idx) => (

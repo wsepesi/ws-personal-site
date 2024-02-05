@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
-import PrintedPhoto from "@/components/PrintedPhoto";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
 import bridge from '../photos/bridge.jpg'
+import me from '../photos/me.png'
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Head>
         <title>William [dot] Computer</title>
       </Head>
-      <SiteBase title="Home">
+      <SiteBase title="william [dot] computer">
         <div className="flex flex-col-reverse md:flex-row">
           <div className="flex-1">
             <p className="font-medium text-xl pb-1">Hello. My name is William Sepesi.</p>
@@ -27,8 +27,7 @@ export default function Home() {
             {/* TODO: engineering projects? other interests? french, music, etc */}
           </div>
           <div className="flex-1">
-             <RetroPhoto src={bridge} alt={"previously in: San Francisco"} /> 
-             {/* TODO: build this out to be a presently -> previously -> ... slide deck essentially */}
+             <RetroPhoto src={me} alt={"paris, france. feb 2023"} /> 
           </div>
         </div>
       </SiteBase>

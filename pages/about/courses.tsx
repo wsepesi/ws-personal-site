@@ -1,4 +1,5 @@
 import SiteBase from "@/components/SiteBase"
+import me from '../../photos/me.png'
 
 type Textbook = {
     title: string,
@@ -204,15 +205,22 @@ const coursesOther: Omit<Course, 'textbooks'>[] = [
 const Courses = () => {
     return (
         <SiteBase title="Coursework">
-            <p>I&apos;m graduating in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.</p>
+            <div className="flex flex-row">
+                <p className="w-auto mb-3">
+                    I&apos;m graduating in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.
+                </p>
+                <div className="">
+                    {/* <RetroPhoto src={me} alt={"paris, france. feb 2023"} small={true}/>  */}
+                </div>
+            </div>
             <hr className="my-2 bg-black h-[2px]"/>
             <p className="italic pt-2">Select coursework from Washington University</p>
-            <p className="text-xl pb-1">Computer Science</p>
+            <p className="text-xl pb-1 underline">Computer Science</p>
             <div>
                 {coursesCS.map((course: Course) => {
                     return (
                         <div key={course.number}>
-                            <p>{course.title} ({course.number}), {course.prof}</p>
+                            <div className="flex flex-col sm:flex-row sm:items-end"><p className="text-lg">{course.title} ({course.number}),&nbsp;</p><p className="italic sm:not-italic">{course.prof}</p></div>
                             <ul className="list-disc list-inside pl-2">
                                 {course.textbooks.map((textbook: Textbook) => {
                                     return (
@@ -224,12 +232,12 @@ const Courses = () => {
                     )
                 })}
             </div>
-            <p className="text-xl py-1">Mathematics</p>
+            <p className="text-xl py-1 underline">Mathematics</p>
             <div>
                 {coursesMath.map((course: Course) => {
                     return (
                         <div key={course.number}>
-                            <p>{course.title} ({course.number}), {course.prof}</p>
+                            <div className="flex flex-col sm:flex-row sm:items-end"><p className="text-lg">{course.title} ({course.number}),&nbsp;</p><p className="italic sm:not-italic">{course.prof}</p></div>
                             <ul className="list-disc list-inside pl-2">
                                 {course.textbooks.map((textbook: Textbook) => {
                                     return (
@@ -241,7 +249,7 @@ const Courses = () => {
                     )
                 })}
             </div>
-            <p className="text-xl py-1">Other</p>
+            <p className="text-xl py-1 underline">Other</p>
             <div>
                 {coursesOther.map((course: Omit<Course, 'textbooks'>) => {
                     return (

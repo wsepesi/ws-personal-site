@@ -8,23 +8,25 @@ import Image, { StaticImageData } from "next/image";
 type Props = {
   src: StaticImageData
   alt?: string
+  small?: boolean
 }
 
 export function RetroPhoto(props: Props) {
+  const small = (props.small !== undefined) && props.small
   return (
     <div className="p-4 max-w-sm mx-auto">
       {/* <div className="bg-[#fafafa] p-6 bg-[url('https://transparenttextures.com/patterns/white-brushed.png')]"> */}
       <div className="bg-[#f7f5ed] p-6 bg-opacity-95 shadow" >
         <Image
           alt="Retro style image"
-          className={props.alt ? "mb-5" : "mb-10"}
-          height="400"
+          className={props.alt ? (small ? "mb-2":"mb-5") : (small ? "mb-5":"mb-10")}
+          height={small ? "200" : "400"}
           src={props.src}
           style={{
             aspectRatio: "300/300",
             objectFit: "cover",
           }}
-          width="300"
+          width={small ? "150" : "300"}
         />
         <p className="text-center text-sm">{props.alt}</p>
       </div>
