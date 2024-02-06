@@ -22,7 +22,7 @@ export default function Home() {
               My interests lie across reinforcement learning (particularly incomplete information), LLMs (particularly local models), mechanistic interpretability and information theory, all both in theory and practice. I&apos;ve <Link href="/about/work" className="underline hover:italic">worked as an ML engineer and researcher</Link> at Microsoft, Square, and a handful of startups on these fields and beyond. I&apos;ve also been the Head Teaching Assistant for a variety of ML courses over the last few years.
             </p>
             <p className="mt-4">
-              Outside of ML I enjoy music, travel, biking, contemporary art, and speaking French. You can contact me at <a href="mailto:hello@william.computer" className="underline hover:italic">hello [at] william [dot] computer</a> or <a href="https://twitter.com/robot__fan" className="underline hover:italic">[at] robot__fan</a> on Twitter.
+              Outside of ML I enjoy music, travel, biking, contemporary art, and speaking French. You can contact me at <a href="mailto:hello@william.computer" className="underline hover:italic">hello [at] william [dot] computer</a> or <a href="https://twitter.com/robot__fan" className="underline hover:italic">[at] robot__fan</a> on Twitter, or find me on Github <a href="https://github.com/wsepesi" className="underline hover:italic">[at] wsepesi</a>.
             </p>
             {/* TODO: engineering projects? other interests? french, music, etc */}
           </div>
