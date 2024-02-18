@@ -113,7 +113,7 @@ const coursesMath: Course[] = [
         ]
     },
     {
-        title: "MEASURE THEORY AND LESBEGUE INTEGRATION",
+        title: "MEASURE THEORY AND LEBESGUE INTEGRATION",
         prof: "Quo-Shin Chi",
         number: "MATH 4121",
         textbooks: []
