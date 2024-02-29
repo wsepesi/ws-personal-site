@@ -77,7 +77,7 @@ const Work = () => {
                         return (
                             <div key={position.company + position.title + position.dates}>
                                 <div className="flex flex-col sm:flex-row sm:items-end">
-                                    <p className="underline text-xl mt-1">{position.company}</p> <p className="">{!isMobile && ","} {position.title}</p><p className="italic">{!isMobile && ","} {position.dates}{!isMobile && ","} {position.location}</p>
+                                    <p className="underline text-xl mt-1">{position.company}</p> <p className="">{!isMobile && ","} {position.title}</p><p className="italic">{!isMobile && ","} {position.dates}, {position.location}</p>
                                 </div>
                                 <p>{position.description}</p>
                                 <ul className="list-disc list-inside pl-2">
