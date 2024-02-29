@@ -1,5 +1,8 @@
+import useIsMobile, { getIsMobile } from "@/lib/utils"
+
 import Head from "next/head"
 import Link from "next/link"
+// @ts-ignore
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 
@@ -20,13 +23,8 @@ interface PageProps {
     title: string,
 }
 
-const getIsMobile = () => {
-    if (typeof window === "undefined") return false
-    return window.innerWidth < 640
-}
-
 const SiteBase = (props: PageProps) => {
-    const isMobile = getIsMobile()
+    const isMobile = useIsMobile(640)
     const location = usePathname() //.split("/")[1]
     const [isHovering, setIsHovering] = useState(false)
 

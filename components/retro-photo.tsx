@@ -27,6 +27,7 @@ export function RetroPhoto(props: Props) {
             objectFit: "cover",
           }}
           width={small ? "150" : "300"}
+          priority
         />
         <p className="text-center text-sm">{props.alt}</p>
       </div>
