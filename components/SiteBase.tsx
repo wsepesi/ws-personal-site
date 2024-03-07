@@ -67,7 +67,7 @@ const SiteBase = (props: PageProps) => {
                             <Link
                                 key={path}
                                 href={path}
-                                className="sm:pointer-events-none"
+                                className="sm:pointer-events-none sm:inline-block"
                             >
                                 <p 
                                     className={`text-xl text-black ${here ? "font-black" : "font-medium"} hover:font-black sm:mx-5`}
