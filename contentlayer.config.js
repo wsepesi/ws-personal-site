@@ -3,6 +3,7 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
 import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math";
 
 export const Post = defineDocumentType(() => ({
@@ -29,7 +30,7 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+      resolve: (post) => `/writing/${post._raw.flattenedPath}`,
     },
   },
 }))
@@ -39,6 +40,6 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     rehypePlugins: [rehypeKatex],
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath, remarkGfm],
   }
 })

@@ -13,8 +13,8 @@ const directory = {
     "/about": {
         name: "about",
     },
-    "/blog": {
-        name: "blog",
+    "/writing": {
+        name: "writing",
     },
 }
 
@@ -46,6 +46,7 @@ const SiteBase = (props: PageProps) => {
                     integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
                     crossOrigin="anonymous"
                 />
+                <title>William [dot] Computer</title>
             </Head>
             <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[15vw] items-center sm:items-start">
                 <div className="sm:min-w-[7vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] w-[50vw] sm:w-[7.5vw] mx-[3vw] sm:mx-0">
@@ -63,6 +64,7 @@ const SiteBase = (props: PageProps) => {
                             <div
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
+                                key={name}
                             >
                             <Link
                                 key={path}
@@ -91,7 +93,7 @@ const SiteBase = (props: PageProps) => {
                     }
                     )}
                 </div>
-                <div className="h-[95vh] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto">
+                <div className="h-dvh w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto">
                     <div className="px-5 pb-5 pt-2">
                         <h1 className="font-title py-2">{props.title}</h1>
                         {props.children}

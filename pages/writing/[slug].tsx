@@ -43,3 +43,12 @@ const PostLayout = ({ post }: PostProps) => {
 }
 
 export default PostLayout
+
+
+// function CustomP({ children }: { children: React.ReactNode }) {
+//   return <p className="mb-1 leading-relaxed">{children}</p>
+// }
+
+// const components: MDXComponents = {
+//   p: CustomP
+// }

@@ -15,7 +15,7 @@ const positions: Position[] = [
         company: "WASHINGTON UNIVERSITY",
         title: "Head Teaching Assistant",
         location: "St. Louis, MO",
-        dates: "Jan '22 - Present",
+        dates: "Jan '22 - May '24",
         description: "Led TA efforts for Advanced Machine Learning (SP24), Theory of Machine Learning (FL23-SP24), and Data Science (FL21-FL22).",
         bullets: [
             "Held office hours, managed team of ~30 TAs for a ~225 student class, occassionally lectured"

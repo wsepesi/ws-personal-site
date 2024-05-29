@@ -23,13 +23,28 @@ h1 {
 
 p {
   font-family: 'Ovo', serif;
-  font-color: 'white'
+  font-color: 'white';
+  /* line-height: 1.6; */
+}
+
+b {
+  font-family: 'Ovo', serif;
+  font-color: 'white';
+  font-weight: 900;
+  font-size: 1.05rem;
 }
 
 h3 {
   font-family: 'Ovo', serif;
   font-color: 'white';
   font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+h4 {
+  font-family: 'Ovo', serif;
+  font-color: 'white';
+  font-size: 1.25rem;
   margin: 1rem 0;
 }
 

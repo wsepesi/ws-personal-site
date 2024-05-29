@@ -1,5 +1,4 @@
 import SiteBase from "@/components/SiteBase"
-import me from '../../photos/me.png'
 
 type Textbook = {
     title: string,
@@ -162,7 +161,7 @@ const coursesMath: Course[] = [
     },
     {
         title: "ABSTRACT ALGEBRA",
-        prof: "Jesús Sanchez",
+        prof: "Jesús Sanchez Jr.",
         number: "MATH 430",
         textbooks: [
             {
@@ -207,7 +206,7 @@ const Courses = () => {
         <SiteBase title="Coursework">
             <div className="flex flex-row">
                 <p className="w-auto mb-3">
-                    I&apos;m graduating in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.
+                    I graduated in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.
                 </p>
                 <div className="">
                     {/* <RetroPhoto src={me} alt={"paris, france. feb 2023"} small={true}/>  */}
