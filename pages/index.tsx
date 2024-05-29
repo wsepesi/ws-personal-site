@@ -2,16 +2,17 @@ import Head from "next/head";
 import Link from "next/link";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
-import bridge from '../photos/bridge.jpg'
 import me from '../photos/me.png'
+import useIsMobile from "@/lib/utils";
 
 export default function Home() {
+  const isMobile = useIsMobile(640)
   return (
     <>
       <Head>
         <title>William [dot] Computer</title>
       </Head>
-      <SiteBase title="william [dot] computer">
+      <SiteBase title={isMobile ? "william[dot]computer":"william [dot] computer"}>
         <div className="flex flex-col-reverse md:flex-row">
           <div className="flex-1">
             <p className="font-medium text-xl pb-1">Hello. My name is William Sepesi.</p>

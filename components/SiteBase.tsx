@@ -93,9 +93,9 @@ const SiteBase = (props: PageProps) => {
                     }
                     )}
                 </div>
-                <div className="h-dvh w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto">
+                <div className="h-[calc(95dvh)] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto">
                     <div className="px-5 pb-5 pt-2">
-                        <h1 className="font-title py-2">{props.title}</h1>
+                        <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>
                         {props.children}
                     </div>
                 </div>
