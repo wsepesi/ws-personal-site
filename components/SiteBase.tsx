@@ -1,7 +1,6 @@
-import useIsMobile, { getIsMobile } from "@/lib/utils"
-
 import Head from "next/head"
 import Link from "next/link"
+import useIsMobile from "@/lib/utils"
 // @ts-ignore
 import { usePathname } from "next/navigation"
 import { useState } from "react"
@@ -25,7 +24,7 @@ interface PageProps {
 
 const SiteBase = (props: PageProps) => {
     const isMobile = useIsMobile(640)
-    const location = usePathname() //.split("/")[1]
+    const location = usePathname()
     const [isHovering, setIsHovering] = useState(false)
 
     const handleMouseEnter = () => {
@@ -48,8 +47,8 @@ const SiteBase = (props: PageProps) => {
                 />
                 <title>William [dot] Computer</title>
             </Head>
-            <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[15vw] items-center sm:items-start">
-                <div className="sm:min-w-[7vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] w-[50vw] sm:w-[7.5vw] mx-[3vw] sm:mx-0">
+            <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[9.5vw] lg:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
+                <div className="sm:min-w-[7vw] w-[50vw] lg:w-[6vw] lg:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
                     {Object.entries(directory).map(([path, { name }]) => {
                         const here = (path !== '/' && location.includes(path)) || location === path
                         return name !== "about" ? (
@@ -93,7 +92,7 @@ const SiteBase = (props: PageProps) => {
                     }
                     )}
                 </div>
-                <div className="h-[calc(95dvh)] w-[94vw] mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto">
+                <div className="h-[calc(95dvh)] w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] lg:min-w-[50vw] lg:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto min-w-0 sm:min-w-[70vw]">
                     <div className="px-5 pb-5 pt-2">
                         <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>
                         {props.children}

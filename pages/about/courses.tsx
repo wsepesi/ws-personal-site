@@ -201,7 +201,7 @@ const coursesOther: Omit<Course, 'textbooks'>[] = [
     }
 ]
 
-const Courses = () => {
+const Courses = () => { // TODO: rework for mobile
     return (
         <SiteBase title="Coursework">
             <div className="flex flex-row">
