@@ -203,7 +203,7 @@ const coursesOther: Omit<Course, 'textbooks'>[] = [
 
 const Courses = () => { // TODO: rework for mobile
     return (
-        <SiteBase title="Coursework">
+        <SiteBase title="Coursework" description="william sepesi's personal website coursework page">
             <div className="flex flex-row">
                 <p className="w-auto mb-3">
                     I graduated in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.

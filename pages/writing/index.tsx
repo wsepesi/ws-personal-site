@@ -15,7 +15,8 @@ function PostCard(post: Post) {
   return (
     <>
     <Head>
-        <title>William [dot] Computer</title>
+        <title>William [dot] Computer | Writing</title>
+        <meta name="description" content="blog post from william sepesi" />
       </Head>
     <div className="mb-6">
       <time dateTime={post.date} className="block text-sm text-slate-600">
@@ -37,7 +38,7 @@ type Props = {
 
 const Writing = ({posts}: Props) => {
     return (
-        <SiteBase title="Writing">
+        <SiteBase title="Writing" description="william sepesi's personal website writing page">
           <div className="flex flex-col md:flex-row justify-between mx-[3vw]">
             <div className="">
               <h3>Posts</h3>

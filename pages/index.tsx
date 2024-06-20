@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>William [dot] Computer</title>
+        <meta name="description" content="william sepesi's personal website home page" />
       </Head>
       <SiteBase title={isMobile ? "william[dot]computer":"william [dot] computer"}>
         <div className="flex flex-col-reverse md:flex-row">

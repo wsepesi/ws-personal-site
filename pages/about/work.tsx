@@ -71,7 +71,7 @@ const Work = () => {
     const isMobile = useIsMobile(640)
     // const isMobile = true
     return (
-        <SiteBase title="Work">
+        <SiteBase title="Work" description="william sepesi's personal website work history page">
             <div className="flex flex-col-reverse sm:flex-row items-center sm:items-start">
                 <div className="flex flex-col">
                     {positions.map((position: Position) => {

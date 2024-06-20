@@ -20,6 +20,7 @@ const directory = {
 interface PageProps {
     children: React.ReactNode,
     title: string,
+    description?: string
 }
 
 const SiteBase = (props: PageProps) => {
@@ -46,6 +47,7 @@ const SiteBase = (props: PageProps) => {
                     crossOrigin="anonymous"
                 />
                 <title>William [dot] Computer</title>
+                <meta name="description" content={props.description || "william sepesi's personal website"} />
             </Head>
             <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[9.5vw] 2xl:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
                 <div className="sm:min-w-[7vw] w-[50vw] 2xl:w-[6vw] 2xl:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
