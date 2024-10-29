@@ -2,9 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
-import me from '../photos/me.png'
+// import me from '../photos/me.png'
 import me2 from '../photos/me2.png'
-import me3 from '../photos/me3.jpg'
 import useIsMobile from "@/lib/utils";
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
             <p className="mt-4">
               Outside of ML I enjoy music, travel, biking, contemporary art, and speaking French. You can contact me at <a href="mailto:hello@william.computer" className="underline hover:italic">hello [at] william [dot] computer</a> or <a href="https://twitter.com/robot__fan" className="underline hover:italic">[at] robot__fan</a> on Twitter, or find me on Github <a href="https://github.com/wsepesi" className="underline hover:italic">[at] wsepesi</a>.
             </p>
-            {/* TODO: engineering projects? other interests? french, music, etc */}
           </div>
           <div className="flex-1">
              {/* <RetroPhoto src={me} alt={"paris, france. feb 2023"} />  */}
