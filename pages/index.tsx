@@ -3,6 +3,8 @@ import Link from "next/link";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
 import me from '../photos/me.png'
+import me2 from '../photos/me2.png'
+import me3 from '../photos/me3.jpg'
 import useIsMobile from "@/lib/utils";
 
 export default function Home() {
@@ -29,7 +31,8 @@ export default function Home() {
             {/* TODO: engineering projects? other interests? french, music, etc */}
           </div>
           <div className="flex-1">
-             <RetroPhoto src={me} alt={"paris, france. feb 2023"} /> 
+             {/* <RetroPhoto src={me} alt={"paris, france. feb 2023"} />  */}
+             <RetroPhoto src={me2} alt={"minneapolis, MN. oct 2024"} />
           </div>
         </div>
       </SiteBase>
