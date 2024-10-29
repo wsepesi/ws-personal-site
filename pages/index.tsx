@@ -3,7 +3,7 @@ import Link from "next/link";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
 // import me from '../photos/me.png'
-import me2 from '../photos/me2.png'
+import me2 from '../photos/me2.webp'
 import useIsMobile from "@/lib/utils";
 
 export default function Home() {

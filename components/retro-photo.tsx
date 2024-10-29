@@ -28,6 +28,7 @@ export function RetroPhoto(props: Props) {
           }}
           width={small ? "150" : "300"}
           priority
+          quality={100}
         />
         <p className="text-center text-sm">{props.alt}</p>
       </div>
