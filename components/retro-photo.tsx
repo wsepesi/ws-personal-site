@@ -14,7 +14,7 @@ type Props = {
 export function RetroPhoto(props: Props) {
   const small = (props.small !== undefined) && props.small
   return (
-    <div className="p-4 max-w-sm mx-auto">
+    <div className="p-4 max-w-sm mx-auto sm:mr-auto lg:mr-10 xl:mr-15 2xl:mr-20">
       {/* <div className="bg-[#fafafa] p-6 bg-[url('https://transparenttextures.com/patterns/white-brushed.png')]"> */}
       <div className="bg-[#f7f5ed] p-6 bg-opacity-95 shadow" >
         <Image

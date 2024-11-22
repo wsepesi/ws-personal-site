@@ -37,15 +37,13 @@ const SiteBase = (props: PageProps) => {
         if (isMobile) return
         setIsHovering(false)
     }
+
+    const isHome = props.title === "william [dot] computer"
+
     return (
         <>
             <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-                    integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-                    crossOrigin="anonymous"
-                />
+                
                 <title>William [dot] Computer</title>
                 <meta name="description" content={props.description || "william sepesi's personal website"} />
             </Head>
@@ -95,7 +93,7 @@ const SiteBase = (props: PageProps) => {
                     )}
                 </div>
                 <div className="h-[calc(95dvh)] w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto min-w-0 sm:min-w-[70vw]">
-                    <div className="px-5 pb-5 pt-2">
+                    <div className={`pb-5 pt-2 ${isHome ? "px-5" : "px-5"}`}>
                         <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>
                         {props.children}
                     </div>
