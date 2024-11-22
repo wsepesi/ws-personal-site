@@ -38,3 +38,5 @@ next-env.d.ts
 globals_old.txt
 
 .contentlayer
+
+drafts/
