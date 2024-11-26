@@ -25,7 +25,12 @@ export const Post = defineDocumentType(() => ({
       type: 'boolean',
       description: 'Is short-style post?',
       required: true,
-    }
+    },
+    bskyurl: {
+      type: 'string',
+      description: 'The url of the post on bsky',
+      required: false,
+    },
   },
   computedFields: {
     url: {

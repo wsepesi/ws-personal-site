@@ -15,10 +15,9 @@ export function RetroPhoto(props: Props) {
   const small = (props.small !== undefined) && props.small
   return (
     <div className="p-4 max-w-sm mx-auto sm:mr-auto lg:mr-10 xl:mr-15 2xl:mr-20">
-      {/* <div className="bg-[#fafafa] p-6 bg-[url('https://transparenttextures.com/patterns/white-brushed.png')]"> */}
       <div className="bg-[#f7f5ed] p-6 bg-opacity-95 shadow" >
         <Image
-          alt="Retro style image"
+          alt="Photo of William Sepesi"
           className={props.alt ? (small ? "mb-2":"mb-5") : (small ? "mb-5":"mb-10")}
           height={small ? "200" : "400"}
           src={props.src}

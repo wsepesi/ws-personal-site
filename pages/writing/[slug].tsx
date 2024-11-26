@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns'
 import { allPosts, type Post } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import SiteBase from '@/components/SiteBase'
+import { CommentSection } from '@/components/bsky-comments'
 
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.url)
@@ -36,6 +37,7 @@ const PostLayout = ({ post }: PostProps) => {
             </time>
           </div>
           <MDXContent />
+          {post.bskyurl &&  <CommentSection url={post.bskyurl} />}
         </article>
       </SiteBase>
     </>
