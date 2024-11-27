@@ -1,20 +1,21 @@
+import { EXTERNAL_DATA_URL, SITE_URL } from '../lib/content';
+
 //pages/sitemap.xml.js
 import fs from 'fs';
 import path from 'path';
-const EXTERNAL_DATA_URL = 'https://william.computer/writing';
 
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://william.computer</loc>
+       <loc>${SITE_URL}</loc>
      </url>
      <url>
-       <loc>https://william.computer/about/work</loc>
+       <loc>${SITE_URL}/about/work</loc>
      </url>
      <url>
-       <loc>https://william.computer/about/courses</loc>
+       <loc>${SITE_URL}/about/courses</loc>
      </url>
      ${posts
        .map(({ id }) => {

@@ -38,4 +38,7 @@ const useIsMobile = (px_width: number) => {
   return isMobile
 }
 
+export const lower = (str: string) => str.toLowerCase()
+export const lowerAndTrimSpaces = (str: string) => lower(str).replace(/\s/g, '')
+
 export default useIsMobile

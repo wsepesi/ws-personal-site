@@ -1,6 +1,8 @@
+import { TEMPLATE, fullName, siteTitle } from "@/lib/content"
+import useIsMobile, { lower } from "@/lib/utils"
+
 import Head from "next/head"
 import Link from "next/link"
-import useIsMobile from "@/lib/utils"
 // @ts-ignore
 import { usePathname } from "next/navigation"
 import { useState } from "react"
@@ -38,14 +40,13 @@ const SiteBase = (props: PageProps) => {
         setIsHovering(false)
     }
 
-    const isHome = props.title === "william [dot] computer"
+    const isHome = props.title === lower(siteTitle)
 
     return (
         <>
             <Head>
-                
-                <title>William [dot] Computer</title>
-                <meta name="description" content={props.description || "william sepesi's personal website"} />
+                <title>{siteTitle}</title>
+                <meta name="description" content={props.description || `${fullName}'s personal website`} />
             </Head>
             <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[9.5vw] 2xl:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
                 <div className="sm:min-w-[7vw] w-[50vw] 2xl:w-[6vw] 2xl:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
@@ -92,12 +93,26 @@ const SiteBase = (props: PageProps) => {
                     }
                     )}
                 </div>
-                <div className="h-[calc(95dvh)] w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto min-w-0 sm:min-w-[70vw]">
-                    <div className={`pb-5 pt-2 ${isHome ? "px-5" : "px-5"}`}>
-                        <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>
-                        {props.children}
-                    </div>
+                <div className={`${TEMPLATE ? "h-[calc(90dvh)]" : "h-[calc(95dvh)]"} w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto min-w-0 sm:min-w-[70vw]`}>                    
+                    <div className={`pb-5 pt-2 ${isHome ? "px-5" : "px-5"}`}>                         
+                        <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>                         
+                        {props.children}                     
+                    </div>                 
                 </div>
+                {TEMPLATE && (
+                    <>
+                        <div className="w-full text-center sm:hidden">
+                            <p className="text-xs pt-2">
+                                Built with <Link href="https://github.com/wsepesi/ws-personal-site" className="underline hover:italic">[dot] computer</Link>
+                            </p>
+                        </div>
+                        <div className="hidden sm:block fixed bottom-0 left-0 w-full h-[20vh]">
+                            <p className="text-xs absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                Built with <Link href="https://github.com/wsepesi/ws-personal-site" className="underline hover:italic">[dot] computer</Link>
+                            </p>
+                        </div>
+                    </>
+                )}
             </div>
         </>
     )

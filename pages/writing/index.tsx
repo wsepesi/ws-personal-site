@@ -3,6 +3,7 @@ import SiteBase from "@/components/SiteBase"
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, type Post } from 'contentlayer/generated'
 import Head from "next/head"
+import { fullName, siteTitle } from "@/lib/content"
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a: Post, b: Post) => {
@@ -12,11 +13,12 @@ export async function getStaticProps() {
 }
 
 function PostCard(post: Post) {
+  const title = `${siteTitle} | Writing`
   return (
     <>
     <Head>
-        <title>William [dot] Computer | Writing</title>
-        <meta name="description" content="blog post from william sepesi" />
+        <title>{title}</title>
+        <meta name="description" content={`blog post from ${fullName}`} />
       </Head>
     <div className="mb-6">
       <time dateTime={post.date} className="block text-sm text-slate-600">
@@ -38,7 +40,7 @@ type Props = {
 
 const Writing = ({posts}: Props) => {
     return (
-        <SiteBase title="Writing" description="william sepesi's personal website writing page">
+        <SiteBase title="Writing" description={`${fullName}'s personal website writing page`}>
           <div className="flex flex-col md:flex-row justify-between mx-[3vw]">
             <div className="">
               <h3>Posts</h3>

@@ -12,7 +12,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'text': ["Ovo", 'serif'],
-        'title': ["Prata", 'serif']
+        'title': ["Prata", 'serif'],
+        'marker': ["Permanent Marker", 'cursive'],
+        'lightmarker': ["Covered By Your Grace", 'normal'],
       },
       // backgroundImage: {
       //   'paper': "url('https://transparenttextures.com/patterns/white-brushed.png')"

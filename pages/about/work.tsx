@@ -1,4 +1,5 @@
 import SiteBase from "@/components/SiteBase"
+import { fullName } from "@/lib/content"
 import useIsMobile from "@/lib/utils"
 
 type Position = {
@@ -69,9 +70,8 @@ const positions: Position[] = [
 
 const Work = () => {
     const isMobile = useIsMobile(640)
-    // const isMobile = true
     return (
-        <SiteBase title="Work" description="william sepesi's personal website work history page">
+        <SiteBase title="Work" description={`${fullName}'s personal website work history page`}>
             <div className="flex flex-col-reverse sm:flex-row items-center sm:items-start">
                 <div className="flex flex-col">
                     {positions.map((position: Position) => {

@@ -1,4 +1,5 @@
 import SiteBase from "@/components/SiteBase"
+import { fullName } from "@/lib/content"
 
 type Textbook = {
     title: string,
@@ -203,14 +204,11 @@ const coursesOther: Omit<Course, 'textbooks'>[] = [
 
 const Courses = () => { // TODO: rework for mobile
     return (
-        <SiteBase title="Coursework" description="william sepesi's personal website coursework page">
+        <SiteBase title="Coursework" description={`${fullName}'s personal website coursework page`}>
             <div className="flex flex-row">
                 <p className="w-auto mb-3">
                     I graduated in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.
                 </p>
-                <div className="">
-                    {/* <RetroPhoto src={me} alt={"paris, france. feb 2023"} small={true}/>  */}
-                </div>
             </div>
             <hr className="my-2 bg-black h-[2px]"/>
             <p className="italic pt-2">Select coursework from Washington University</p>

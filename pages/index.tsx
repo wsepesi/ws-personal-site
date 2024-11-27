@@ -1,20 +1,24 @@
+import {
+  fullName,
+  siteTitle
+} from "@/lib/content";
+import useIsMobile, { lower, lowerAndTrimSpaces } from "@/lib/utils";
+
 import Head from "next/head";
 import Link from "next/link";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
-// import me from '../photos/me.png'
-import me2 from '../photos/me2.webp'
-import useIsMobile from "@/lib/utils";
+import me2 from '@/photos/me2.webp'
 
 export default function Home() {
   const isMobile = useIsMobile(640)
   return (
     <>
       <Head>
-        <title>William [dot] Computer</title>
-        <meta name="description" content="william sepesi's personal website home page" />
+        <title>{siteTitle}</title>
+        <meta name="description" content={`${fullName}'s personal website home page`} />
       </Head>
-      <SiteBase title={isMobile ? "william[dot]computer":"william [dot] computer"}>
+      <SiteBase title={isMobile ? lowerAndTrimSpaces(siteTitle) : lower(siteTitle)}>
         <div className="flex flex-col-reverse md:flex-row">
           <div className="flex-1">
             <p className="font-medium text-xl pb-1">Hello. My name is William Sepesi.</p>
@@ -29,7 +33,6 @@ export default function Home() {
             </p>
           </div>
           <div className="flex-1">
-             {/* <RetroPhoto src={me} alt={"paris, france. feb 2023"} />  */}
              <RetroPhoto src={me2} alt={"minneapolis, MN. oct 2024"} />
           </div>
         </div>
