@@ -79,11 +79,11 @@ const SiteBase = (props: PageProps) => {
                                 {  (isHovering || (here && !(isMobile))) && (
                                     <div className="pl-1">
                                         {/* TODO: refactor nicely if you add more of these */}
-                                        <Link href="/about/courses">
-                                                <p className={`text-xl text-black ${location.includes("courses") ? "font-black" : "font-medium"} hover:font-black sm:mx-5`}>courses</p>
-                                        </Link>
                                         <Link href="/about/work">
                                                 <p className={`text-xl text-black ${location.includes("work") ? "font-black" : "font-medium"} hover:font-black sm:mx-5`}>work</p>
+                                        </Link>
+                                        <Link href="/about/courses">
+                                                <p className={`text-xl text-black ${location.includes("courses") ? "font-black" : "font-medium"} hover:font-black sm:mx-5`}>courses</p>
                                         </Link>
                                     </div>
                                 )}
@@ -93,10 +93,12 @@ const SiteBase = (props: PageProps) => {
                     }
                     )}
                 </div>
-                <div className={`${TEMPLATE ? "h-[calc(90dvh)]" : "h-[calc(95dvh)]"} w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[80vh] border border-1 border-black overflow-y-auto min-w-0 sm:min-w-[70vw]`}>                    
-                    <div className={`pb-5 pt-2 ${isHome ? "px-5" : "px-5"}`}>                         
+                <div className={`${TEMPLATE ? "h-[calc(90dvh)]" : "h-[calc(95dvh)]"} w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[80vh] border border-1 border-black min-w-0 sm:min-w-[70vw]`}>                    
+                    <div className={`pb-5 pt-2 ${isHome ? "px-5" : "px-5"} flex flex-col h-full`}>                         
                         <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>                         
-                        {props.children}                     
+                        <div className="flex-grow min-h-0 overflow-y-auto">
+                            {props.children}
+                        </div>
                     </div>                 
                 </div>
                 {TEMPLATE && (

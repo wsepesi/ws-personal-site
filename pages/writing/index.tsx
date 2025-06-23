@@ -41,20 +41,24 @@ type Props = {
 const Writing = ({posts}: Props) => {
     return (
         <SiteBase title="Writing" description={`${fullName}'s personal website writing page`}>
-          <div className="flex flex-col md:flex-row justify-between mx-[3vw]">
-            <div className="">
+          <div className="flex flex-col md:flex-row justify-between mx-[3vw] h-full md:space-x-8">
+            <div className="flex flex-col flex-1 min-h-0">
               <h3>Posts</h3>
               <hr />
-              {posts.filter(post => !post.short).map((post, idx) => (
-                <PostCard key={idx} {...post} />
-              ))}
+              <div className="overflow-y-auto">
+                {posts.filter(post => !post.short).map((post, idx) => (
+                  <PostCard key={idx} {...post} />
+                ))}
+              </div>
             </div>
-            <div className="">
+            <div className="flex flex-col flex-1 min-h-0">
               <h3>Reading</h3>
               <hr />
-              {posts.filter(post => post.short).map((post, idx) => (
-                <PostCard key={idx} {...post} />
-              ))}
+              <div className="overflow-y-auto">
+                {posts.filter(post => post.short).map((post, idx) => (
+                  <PostCard key={idx} {...post} />
+                ))}
+              </div>
             </div>
           </div>
             

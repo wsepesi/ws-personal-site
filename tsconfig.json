@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated", "pages/sitemap.xml.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated", "pages/sitemap.xml.js", "types/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

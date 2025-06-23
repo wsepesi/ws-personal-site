@@ -13,6 +13,15 @@ type Position = {
 
 const positions: Position[] = [
     {
+        company: "INDEPENDENT RESEARCHER",
+        title: "",
+        location: "San Francisco, CA",
+        dates: "Apr '25 - Present",
+        description: "Working on a variety of research and engineering projects, as well as consulting on AI / LLMs.",
+        bullets: [
+        ]
+    },
+    {
         company: "ADVEX AI",
         title: "Founding ML Engineer",
         location: "San Francisco, CA",
@@ -27,11 +36,11 @@ const positions: Position[] = [
         company: "THERAP SERVICES",
         title: "Member of Technical Staff, AI Research",
         location: "Remote",
-        dates: "Jul '24 - Nov '24",
-        description: "Directed AI strategy and led two research initiatives at a leading electronic health record (EHR) provider serving individuals with intellectual and developmental disabilities (I/DD), working directly with the C suite.",
+        dates: "Jul '24 - Present",
+        description: "Directed AI strategy and research initiatives at a leading electronic health record (EHR) provider.",
         bullets: [
-            "Architected pipeline, trained initial models, and validated scalability of a LLM-based tool to classify and extract data from natural language logs from caretakers using the Therap platform, using Llama and BERT to handle 30 requests/second on average. Patented and featured at the Therap National Conference",
-            "Prototyped an on-device VLM-based event log generation for cameras placed in homes of I/DD individuals to improve monitoring and safety while maintaining individual privacy, generating text-based logs to ship off device (also patented)",
+            "Researched and prototyped a variety of AI-based solutions for the Therap platform, including fine-tuning LLMs for secure deployment at enterprise scale, and an on-camera VLM based event log system -- both under patent review",
+            "Advised ML research and engineering teams on applied projects, and traveled to Bangladesh with the C-suite to oversee division restructuring to modernize AI strategy"    
         ]
     },
     {
@@ -101,7 +110,7 @@ const Work = () => {
                         return (
                             <div key={position.company + position.title + position.dates}>
                                 <div className="flex flex-col sm:flex-row sm:items-end">
-                                    <p className="underline text-xl mt-1">{position.company}</p> <p className="">{!isMobile && ","} {position.title}</p><p className="italic">{!isMobile && ","} {position.dates}, {position.location}</p>
+                                    <p className="underline text-xl mt-1">{position.company}</p> <p className="">{!isMobile && position.title && ","} {position.title}</p><p className="italic">{!isMobile && position.location && ","} {position.dates}, {position.location}</p>
                                 </div>
                                 <p>{position.description}</p>
                                 <ul className="list-disc list-inside pl-2">
