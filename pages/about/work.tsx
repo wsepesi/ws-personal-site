@@ -12,15 +12,15 @@ type Position = {
 }
 
 const positions: Position[] = [
-    {
-        company: "INDEPENDENT RESEARCHER",
-        title: "",
-        location: "San Francisco, CA",
-        dates: "Apr '25 - Present",
-        description: "Working on a variety of research and engineering projects, as well as consulting on AI / LLMs.",
-        bullets: [
-        ]
-    },
+    // {
+    //     company: "INDEPENDENT RESEARCHER",
+    //     title: "",
+    //     location: "San Francisco, CA",
+    //     dates: "Apr '25 - Present",
+    //     description: "Working on a variety of research and engineering projects, as well as consulting on AI / LLMs.",
+    //     bullets: [
+    //     ]
+    // },
     {
         company: "ADVEX AI",
         title: "Founding ML Engineer",

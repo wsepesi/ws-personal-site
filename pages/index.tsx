@@ -28,9 +28,9 @@ export default function Home() {
             <p className="mt-4">
               My interests lie across reinforcement learning, LLMs, and mechanistic interpretability. I&apos;ve <Link href="/about/work" className="underline hover:italic">worked as an ML engineer and researcher</Link> at Microsoft, Square, and a handful of startups in these areas and beyond. During my time at university, I was the Head Teaching Assistant for a variety of ML courses during my undergrad.
             </p>
-            <p className="mt-4">
+            {/* <p className="mt-4">
               I also consult on AI, with a focus on bringing my years of research and engineering expertise to help companies succeed in delivering the promises of AI / LLMs.
-            </p>
+            </p> */}
             <p className="mt-4">
               Outside of ML I enjoy music, travel, biking, contemporary art, and speaking French. You can contact me at <a href="mailto:hello@william.computer" className="underline hover:italic">hello [at] william [dot] computer</a> or <a href="https://twitter.com/robot__fan" className="underline hover:italic">[at] robot__fan</a> on Twitter, or find me on Github <a href="https://github.com/wsepesi" className="underline hover:italic">[at] wsepesi</a>.
             </p>
