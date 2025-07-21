@@ -22,6 +22,15 @@ const positions: Position[] = [
         ]
     },
     {
+        company: "THERAP SERVICES",
+        title: "DIRECTOR OF AI",
+        location: "Remote",
+        dates: "Jun '25 - Present",
+        description: "",
+        bullets: [
+        ]
+    },
+    {
         company: "ADVEX AI",
         title: "Founding ML Engineer",
         location: "San Francisco, CA",
@@ -36,11 +45,11 @@ const positions: Position[] = [
         company: "THERAP SERVICES",
         title: "Member of Technical Staff, AI Research",
         location: "Remote",
-        dates: "Jul '24 - Present",
+        dates: "Jul '24 - Nov '24, Apr '25 - Jun '25",
         description: "Directed AI strategy and research initiatives at a leading electronic health record (EHR) provider.",
         bullets: [
             "Researched and prototyped a variety of AI-based solutions for the Therap platform, including fine-tuning LLMs for secure deployment at enterprise scale, and an on-camera VLM based event log system -- both under patent review",
-            "Advised ML research and engineering teams on applied projects, and traveled to Bangladesh with the C-suite to oversee division restructuring to modernize AI strategy"    
+            "Advised ML research and engineering teams on applied projects, and traveled to Bangladesh to oversee AI strategy"    
         ]
     },
     {
