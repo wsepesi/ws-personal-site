@@ -2,8 +2,8 @@ import Link from "next/link"
 import SiteBase from "@/components/SiteBase"
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, type Post } from 'contentlayer/generated'
-import Head from "next/head"
-import { fullName, siteTitle } from "@/lib/content"
+import SEO from "@/components/SEO"
+import { fullName, siteTitle, SITE_URL } from "@/lib/content"
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a: Post, b: Post) => {
@@ -13,13 +13,7 @@ export async function getStaticProps() {
 }
 
 function PostCard(post: Post) {
-  const title = `${siteTitle} | Writing`
   return (
-    <>
-    <Head>
-        <title>{title}</title>
-        <meta name="description" content={`blog post from ${fullName}`} />
-      </Head>
     <div className="mb-6">
       <time dateTime={post.date} className="block text-sm text-slate-600">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
@@ -30,7 +24,6 @@ function PostCard(post: Post) {
         </Link>
       </h2>
     </div>
-    </>
   )
 }
 
@@ -40,7 +33,14 @@ type Props = {
 
 const Writing = ({posts}: Props) => {
     return (
-        <SiteBase title="Writing" description={`${fullName}'s personal website writing page`}>
+        <>
+            <SEO
+                title="Writing"
+                description={`Blog posts and reading notes by ${fullName} on machine learning, AI research, reinforcement learning, and technology insights.`}
+                url={`${SITE_URL}/writing`}
+                keywords={['William Sepesi blog', 'machine learning blog', 'AI research writing', 'ML engineering posts', 'tech insights']}
+            />
+            <SiteBase title="Writing" description={`${fullName}'s personal website writing page`}>
           <div className="flex flex-col md:flex-row justify-between mx-[3vw] h-full md:space-x-8">
             <div className="flex flex-col flex-1 min-h-0">
               <h3>Posts</h3>
@@ -61,8 +61,9 @@ const Writing = ({posts}: Props) => {
               </div>
             </div>
           </div>
-            
+
         </SiteBase>
+        </>
     )
 }
 

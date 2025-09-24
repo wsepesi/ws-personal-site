@@ -1,5 +1,6 @@
 import SiteBase from "@/components/SiteBase"
-import { fullName } from "@/lib/content"
+import SEO from "@/components/SEO"
+import { fullName, SITE_URL } from "@/lib/content"
 import useIsMobile from "@/lib/utils"
 
 type Position = {
@@ -17,7 +18,7 @@ const positions: Position[] = [
         title: "Director of AI",
         location: "Remote",
         dates: "Jun '25 - Present",
-        description: "Leading applied and fundamental AI research and engineering projects.",
+        description: "Directing applied and fundamental AI research and engineering projects.",
         bullets: [
         ]
     },
@@ -37,7 +38,7 @@ const positions: Position[] = [
         title: "Member of Technical Staff, AI Research",
         location: "Remote",
         dates: "Jul '24 - Nov '24, Apr '25 - Jun '25",
-        description: "Directed AI strategy and research initiatives at a leading electronic health record (EHR) provider.",
+        description: "Led AI strategy and research initiatives at a major electronic health record (EHR) provider.",
         bullets: [
             "Researched and prototyped a variety of AI-based solutions for the Therap platform, including fine-tuning LLMs for secure deployment at enterprise scale, and an on-camera VLM based event log system -- both under patent review",
             "Advised ML research and engineering teams on applied projects, and traveled to Bangladesh to oversee AI strategy"    
@@ -103,7 +104,14 @@ const positions: Position[] = [
 const Work = () => {
     const isMobile = useIsMobile(640)
     return (
-        <SiteBase title="Work" description={`${fullName}'s personal website work history page`}>
+        <>
+            <SEO
+                title="Work Experience"
+                description={`${fullName}'s professional experience at Microsoft, Square, Therap Services, and various ML startups. Director of AI, ML engineering roles, and research positions.`}
+                url={`${SITE_URL}/about/work`}
+                keywords={['William Sepesi work experience', 'Microsoft ML engineer', 'Square software engineer', 'Therap Services AI', 'ML engineering career', 'AI research positions']}
+            />
+            <SiteBase title="Work" description={`${fullName}'s personal website work history page`}>
             <div className="flex flex-col-reverse sm:flex-row items-center sm:items-start">
                 <div className="flex flex-col">
                     {positions.map((position: Position) => {
@@ -126,6 +134,7 @@ const Work = () => {
                 </div>
             </div>
         </SiteBase>
+        </>
     )
 }
 

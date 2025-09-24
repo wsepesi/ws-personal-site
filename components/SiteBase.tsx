@@ -1,7 +1,6 @@
 import { TEMPLATE, fullName, siteTitle } from "@/lib/content"
 import useIsMobile, { lower } from "@/lib/utils"
 
-import Head from "next/head"
 import Link from "next/link"
 // @ts-ignore
 import { usePathname } from "next/navigation"
@@ -44,10 +43,6 @@ const SiteBase = (props: PageProps) => {
 
     return (
         <>
-            <Head>
-                <title>{siteTitle}</title>
-                <meta name="description" content={props.description || `${fullName}'s personal website`} />
-            </Head>
             <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[9.5vw] 2xl:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
                 <div className="sm:min-w-[7vw] w-[50vw] 2xl:w-[6vw] 2xl:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
                     {Object.entries(directory).map(([path, { name }]) => {

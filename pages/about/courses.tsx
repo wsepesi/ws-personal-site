@@ -1,5 +1,6 @@
 import SiteBase from "@/components/SiteBase"
-import { fullName } from "@/lib/content"
+import SEO from "@/components/SEO"
+import { fullName, SITE_URL } from "@/lib/content"
 
 type Textbook = {
     title: string,
@@ -204,7 +205,14 @@ const coursesOther: Omit<Course, 'textbooks'>[] = [
 
 const Courses = () => { // TODO: rework for mobile
     return (
-        <SiteBase title="Coursework" description={`${fullName}'s personal website coursework page`}>
+        <>
+            <SEO
+                title="Coursework"
+                description={`${fullName}'s academic coursework at Washington University - computer science and mathematics double major with focus on machine learning, algorithms, and mathematical analysis.`}
+                url={`${SITE_URL}/about/courses`}
+                keywords={['William Sepesi education', 'Washington University coursework', 'computer science major', 'mathematics major', 'machine learning courses', 'algorithms', 'real analysis']}
+            />
+            <SiteBase title="Coursework" description={`${fullName}'s personal website coursework page`}>
             <div className="flex flex-row">
                 <p className="w-auto mb-3">
                     I graduated in spring 2024 with a double major in computer science and mathematics after spending 3.5 years at WU and my junior spring semester at the Sorbonne in Paris.
@@ -257,6 +265,7 @@ const Courses = () => { // TODO: rework for mobile
                 })}
             </div>
         </SiteBase>
+        </>
     )
 }
 

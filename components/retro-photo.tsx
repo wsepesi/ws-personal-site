@@ -17,7 +17,7 @@ export function RetroPhoto(props: Props) {
     <div className="p-4 max-w-sm mx-auto sm:mr-auto lg:mr-10 xl:mr-15 2xl:mr-20">
       <div className="bg-[#f7f5ed] p-6 bg-opacity-95 shadow" >
         <Image
-          alt="Photo of William Sepesi"
+          alt={props.alt || "Photo of William Sepesi"}
           className={props.alt ? (small ? "mb-2":"mb-5") : (small ? "mb-5":"mb-10")}
           height={small ? "200" : "400"}
           src={props.src}
@@ -28,6 +28,7 @@ export function RetroPhoto(props: Props) {
           width={small ? "150" : "300"}
           priority
           quality={100}
+          loading="eager"
         />
         <p className="text-center text-sm">{props.alt}</p>
       </div>

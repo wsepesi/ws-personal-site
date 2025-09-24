@@ -1,23 +1,29 @@
 import {
   fullName,
-  siteTitle
+  siteTitle,
+  SITE_URL
 } from "@/lib/content";
 import useIsMobile, { lower, lowerAndTrimSpaces } from "@/lib/utils";
 
-import Head from "next/head";
 import Link from "next/link";
 import { RetroPhoto } from "@/components/retro-photo";
 import SiteBase from "@/components/SiteBase";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import bridge from '@/photos/bridge.jpg'
 
 export default function Home() {
   const isMobile = useIsMobile(640)
   return (
     <>
-      <Head>
-        <title>{siteTitle}</title>
-        <meta name="description" content={`${fullName}'s personal website home page`} />
-      </Head>
+      <SEO
+        title={siteTitle}
+        description={`${fullName} - Machine learning researcher and engineer specializing in reinforcement learning, LLMs, and mechanistic interpretability. Former Microsoft, Square engineer.`}
+        url={SITE_URL}
+        keywords={['William Sepesi', 'machine learning researcher', 'ML engineer', 'reinforcement learning', 'LLMs', 'mechanistic interpretability', 'Microsoft', 'Square', 'Washington University']}
+      />
+      <StructuredData type="website" />
+      <StructuredData type="person" />
       <SiteBase title={isMobile ? lowerAndTrimSpaces(siteTitle) : lower(siteTitle)}>
         <div className="flex flex-col-reverse md:flex-row">
           <div className="flex-1">
@@ -36,7 +42,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex-1">
-             <RetroPhoto src={bridge} alt={"currently in: san francisco, ca"} />
+             <RetroPhoto src={bridge} alt="currently in: san francisco, ca" />
           </div>
         </div>
       </SiteBase>

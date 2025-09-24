@@ -7,21 +7,46 @@ import path from 'path';
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
+     <!--Static pages-->
      <url>
        <loc>${SITE_URL}</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>1.0</priority>
+     </url>
+     <url>
+       <loc>${SITE_URL}/about</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
      </url>
      <url>
        <loc>${SITE_URL}/about/work</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
      </url>
      <url>
        <loc>${SITE_URL}/about/courses</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.7</priority>
      </url>
+     <url>
+       <loc>${SITE_URL}/writing</loc>
+       <lastmod>${new Date().toISOString()}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.9</priority>
+     </url>
+     <!--Blog posts-->
      ${posts
-       .map(({ id }) => {
+       .map(({ id, lastModified }) => {
          return `
        <url>
-           <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
+           <loc>${SITE_URL}/writing/${id}</loc>
+           <lastmod>${lastModified || new Date().toISOString()}</lastmod>
+           <changefreq>monthly</changefreq>
+           <priority>0.6</priority>
        </url>
      `;
        })
@@ -51,16 +76,18 @@ export async function getServerSideProps({ res }) {
 }
 
 function getPosts() {
-  // get the posts from the file system, from ../posts. return a list of jsons with id and title. make ids sorted alphabetically
-  // first get the file names
+  // get the posts from the file system, from ../posts. return a list of jsons with id and lastModified
   const postsDirectory = path.join(process.cwd(), 'posts');
   const fileNames = fs.readdirSync(postsDirectory);
 
-  // then create json
+  // then create json with modification dates
   const posts = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, '');
+    const id = fileName.replace(/\.mdx?$/, '');
+    const filePath = path.join(postsDirectory, fileName);
+    const stats = fs.statSync(filePath);
     return {
       id,
+      lastModified: stats.mtime.toISOString(),
     };
   });
 
