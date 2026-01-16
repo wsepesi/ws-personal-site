@@ -50,7 +50,7 @@ export default function Home() {
             <li><a href="https://github.com/wsepesi" className="underline hover:italic">[at] wsepesi</a> on Github</li>
           </ul>
           <p className="mt-4">
-            Please reach out if you'd like to chat!
+            Please reach out if you&apos;d like to chat!
           </p>
         </div>
         <div className="flex-1">
