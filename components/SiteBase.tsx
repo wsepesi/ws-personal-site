@@ -1,10 +1,14 @@
+'use client'
+
 import { TEMPLATE, fullName, siteTitle } from "@/lib/content"
-import useIsMobile, { lower } from "@/lib/utils"
+import useIsMobile from "@/lib/hooks"
+import { lower } from "@/lib/utils"
 
 import Link from "next/link"
 // @ts-ignore
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useRef, useState } from "react"
+import { ScrollProgressBar } from "./ScrollProgressBar"
 
 const directory = {
     "/": {
@@ -16,18 +20,23 @@ const directory = {
     "/writing": {
         name: "writing",
     },
+    "/contact": {
+        name: "contact",
+    },
 }
 
 interface PageProps {
     children: React.ReactNode,
     title: string,
-    description?: string
+    description?: string,
+    showScrollProgress?: boolean
 }
 
 const SiteBase = (props: PageProps) => {
     const isMobile = useIsMobile(640)
     const location = usePathname()
     const [isHovering, setIsHovering] = useState(false)
+    const scrollContainerRef = useRef<HTMLDivElement>(null)
 
     const handleMouseEnter = () => {
         if (isMobile) return
@@ -43,7 +52,7 @@ const SiteBase = (props: PageProps) => {
 
     return (
         <>
-            <div className="flex flex-col sm:flex-row sm:pt-[10vh] sm:pl-[9.5vw] 2xl:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
+            <div className="flex flex-col sm:flex-row sm:pt-[7vh] sm:pl-[9.5vw] 2xl:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
                 <div className="sm:min-w-[7vw] w-[50vw] 2xl:w-[6vw] 2xl:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
                     {Object.entries(directory).map(([path, { name }]) => {
                         const here = (path !== '/' && location.includes(path)) || location === path
@@ -88,10 +97,11 @@ const SiteBase = (props: PageProps) => {
                     }
                     )}
                 </div>
-                <div className={`${TEMPLATE ? "h-[calc(90dvh)]" : "h-[calc(95dvh)]"} w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[80vh] border border-1 border-black min-w-0 sm:min-w-[70vw]`}>                    
+                <div className={`${TEMPLATE ? "h-[calc(90dvh)]" : "h-[calc(95dvh)]"} w-full mx-[3vw] mb-[1vh] sm:mx-0 sm:my-0 sm:w-[60vw] 2xl:min-w-[50vw] 2xl:w-[60vw] sm:h-[85vh] border border-1 border-black min-w-0 sm:min-w-[70vw]`}>                    
                     <div className={`pb-5 pt-2 ${isHome ? "px-5" : "px-5"} flex flex-col h-full`}>                         
-                        <h1 className="font-title pt-2 md:py-2 self-center md:self-start text-center md:text-start">{props.title}</h1>                         
-                        <div className="flex-grow min-h-0 overflow-y-auto">
+                        <h1 className="font-title pt-2 md:pt-2 md:pb-0 self-center md:self-start text-center md:text-start">{props.title}</h1>                         
+                        <div ref={scrollContainerRef} className="flex-grow min-h-0 overflow-y-auto">
+                            {props.showScrollProgress && <ScrollProgressBar containerRef={scrollContainerRef} />}
                             {props.children}
                         </div>
                     </div>                 

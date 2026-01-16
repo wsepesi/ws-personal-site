@@ -1,3 +1,5 @@
+'use client'
+
 // ADAPTED FROM: https://gist.githubusercontent.com/emilyliu7321/19ac4e111588bdc0cb4e411c88d9c79a/raw/f1b5a39bedf4cbedf81db7aa54159584e0ba528a/bluesky-comments.tsx
 
 /* eslint-disable @next/next/no-img-element */

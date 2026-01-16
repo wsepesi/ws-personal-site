@@ -11,8 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'text': ["Ovo", 'serif'],
-        'title': ["Prata", 'serif'],
+        'text': ['var(--font-ovo)', 'serif'],
+        'title': ['var(--font-prata)', 'serif'],
         'marker': ["Permanent Marker", 'cursive'],
         'lightmarker': ["Covered By Your Grace", 'normal'],
       },

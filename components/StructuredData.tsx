@@ -35,7 +35,7 @@ const StructuredData: React.FC<StructuredDataProps> = (props) => {
         "https://www.linkedin.com/in/william-sepesi/"
       ],
       "jobTitle": "Machine Learning Researcher and Engineer",
-      "description": "Machine learning researcher and engineer specializing in reinforcement learning, LLMs, and mechanistic interpretability",
+      "description": "Machine learning researcher and engineer.",
       "knowsAbout": [
         "Machine Learning",
         "Artificial Intelligence",
@@ -87,8 +87,8 @@ const StructuredData: React.FC<StructuredDataProps> = (props) => {
       "@type": "WebSite",
       "name": "William [dot] Computer",
       "url": SITE_URL,
-      "description": `${fullName}'s personal website - machine learning researcher and engineer`,
-      "author": {
+      "description": `${fullName}'s personal website - machine learning researcher and engineer.`,
+      "author": { 
         "@type": "Person",
         "name": fullName,
         "url": SITE_URL
