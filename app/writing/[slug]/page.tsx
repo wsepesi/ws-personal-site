@@ -193,10 +193,9 @@ export default async function PostPage({ params }: Props) {
             </div>
           </div>
         )}
-        <FootnoteTooltips>
+        <FootnoteTooltips beforeFootnotes={!post.short ? <SubscribeBox /> : undefined}>
           <MDXContent components={components} />
         </FootnoteTooltips>
-        {!post.short && <SubscribeBox />}
         {post.bskyurl && <CommentSection url={post.bskyurl} />}
       </article>
     </SiteBase>

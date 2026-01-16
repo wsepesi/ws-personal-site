@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 
 interface FootnoteTooltipsProps {
   children: React.ReactNode
+  beforeFootnotes?: React.ReactNode
 }
 
 interface TooltipState {
@@ -14,8 +16,10 @@ interface TooltipState {
   arrowOffset: number // How much the arrow needs to shift from center (in px)
 }
 
-export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
+export function FootnoteTooltips({ children, beforeFootnotes }: FootnoteTooltipsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const portalTargetRef = useRef<HTMLDivElement | null>(null)
+  const [portalReady, setPortalReady] = useState(false)
   const [tooltip, setTooltip] = useState<TooltipState>({
     visible: false,
     content: '',
@@ -82,6 +86,38 @@ export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
     activeRefHref.current = null
     setTooltip(prev => ({ ...prev, visible: false }))
   }, [])
+
+  // Insert portal target before footnotes section
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container || !beforeFootnotes) return
+
+    const footnotesSection = container.querySelector('[data-footnotes]')
+    if (!footnotesSection) {
+      // No footnotes section - append at the end of the container
+      const target = document.createElement('div')
+      container.appendChild(target)
+      portalTargetRef.current = target
+      setPortalReady(true)
+      return () => {
+        target.remove()
+        portalTargetRef.current = null
+        setPortalReady(false)
+      }
+    }
+
+    // Insert target div before footnotes
+    const target = document.createElement('div')
+    footnotesSection.parentNode?.insertBefore(target, footnotesSection)
+    portalTargetRef.current = target
+    setPortalReady(true)
+
+    return () => {
+      target.remove()
+      portalTargetRef.current = null
+      setPortalReady(false)
+    }
+  }, [beforeFootnotes, children])
 
   useEffect(() => {
     const container = containerRef.current
@@ -174,6 +210,10 @@ export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
             }}
           />
         </div>
+      )}
+      {portalReady && portalTargetRef.current && beforeFootnotes && createPortal(
+        beforeFootnotes,
+        portalTargetRef.current
       )}
     </div>
   )
