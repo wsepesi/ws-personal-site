@@ -11,6 +11,7 @@ interface TooltipState {
   content: string
   x: number
   y: number
+  arrowOffset: number // How much the arrow needs to shift from center (in px)
 }
 
 export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
@@ -20,6 +21,7 @@ export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
     content: '',
     x: 0,
     y: 0,
+    arrowOffset: 0,
   })
   const activeRefHref = useRef<string | null>(null)
 
@@ -44,12 +46,35 @@ export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
     const rect = ref.getBoundingClientRect()
     const containerRect = container.getBoundingClientRect()
 
+    // Calculate initial centered position
+    const centerX = rect.left - containerRect.left + rect.width / 2
+    const containerWidth = containerRect.width
+
+    // Tooltip is max-w-xs = 320px, so half-width is 160px
+    const tooltipHalfWidth = 160
+    const padding = 8 // Small padding from edges
+
+    let finalX = centerX
+    let arrowOffset = 0
+
+    // Check left overflow
+    if (centerX - tooltipHalfWidth < padding) {
+      finalX = tooltipHalfWidth + padding
+      arrowOffset = centerX - finalX // Will be negative (arrow shifts left)
+    }
+    // Check right overflow
+    else if (centerX + tooltipHalfWidth > containerWidth - padding) {
+      finalX = containerWidth - tooltipHalfWidth - padding
+      arrowOffset = centerX - finalX // Will be positive (arrow shifts right)
+    }
+
     activeRefHref.current = href
     setTooltip({
       visible: true,
       content,
-      x: rect.left - containerRect.left + rect.width / 2,
+      x: finalX,
       y: rect.top - containerRect.top,
+      arrowOffset,
     })
   }, [getFootnoteContent])
 
@@ -133,14 +158,21 @@ export function FootnoteTooltips({ children }: FootnoteTooltipsProps) {
       {tooltip.visible && (
         <div
           role="tooltip"
-          className="absolute z-50 max-w-xs px-3 py-2 text-sm bg-stone-800 text-white rounded-md shadow-lg pointer-events-none transform -translate-x-1/2 -translate-y-full -mt-2"
+          className="absolute z-50 max-w-xs px-3 py-2 text-sm bg-stone-800 text-white rounded-md shadow-lg pointer-events-none"
           style={{
             left: tooltip.x,
             top: tooltip.y,
+            transform: 'translate(-50%, calc(-100% - 8px))',
           }}
         >
           {tooltip.content}
-          <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-stone-800" />
+          <div
+            className="absolute top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-stone-800"
+            style={{
+              left: `calc(50% + ${tooltip.arrowOffset}px)`,
+              transform: 'translateX(-50%)',
+            }}
+          />
         </div>
       )}
     </div>

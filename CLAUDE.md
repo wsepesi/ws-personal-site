@@ -4,61 +4,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal website and blog built with Next.js, TypeScript, and Tailwind CSS. The site features a content management system powered by Contentlayer for MDX blog posts and includes Bluesky social integration for comments.
+Personal website and blog built with Next.js 15, TypeScript, and Tailwind CSS. Features MDX blog posts with math rendering (KaTeX) and Bluesky social integration for comments.
 
 ## Commands
 
-### Development
 - `pnpm dev` - Start development server
-- `pnpm build` - Build the application for production
+- `pnpm build` - Build for production
 - `pnpm start` - Start production server
 - `pnpm lint` - Run ESLint
 
-### Package Manager
-This project uses `pnpm` as the package manager (evidenced by `pnpm-lock.yaml`).
-
 ## Architecture
 
-### Content Management
-- **Contentlayer**: Configured in `contentlayer.config.js` to process MDX files from the `posts/` directory
-- **Blog Posts**: MDX files in `posts/` with frontmatter fields:
-  - `title` (required): Post title
-  - `date` (required): Publication date
-  - `short` (required): Boolean for short-style posts
-  - `bskyurl` (optional): Bluesky URL for comments integration
-- **Content Processing**: Uses remark-math, remark-gfm, and rehype-katex plugins for math and GitHub-flavored markdown
+### App Router Structure
+Uses Next.js App Router (migrated from Pages Router). Key routes:
+- `app/page.tsx` - Home page
+- `app/writing/page.tsx` - Blog listing
+- `app/writing/[slug]/page.tsx` - Individual blog posts (SSG via `generateStaticParams`)
+- `app/about/` - About pages with nested routes (courses, work)
+- `app/actions/` - Server actions for contact form and newsletter subscription
 
-### Site Structure
-- **Pages Router**: Uses Next.js pages directory structure
-- **Dynamic Routes**: `/writing/[slug].tsx` for individual blog posts
-- **Static Generation**: Posts use `getStaticPaths` and `getStaticProps` for SSG
+### Content System
+- **Blog Posts**: MDX files in `posts/` directory
+- **Post Processing**: `lib/posts.ts` handles reading posts with gray-matter for frontmatter parsing
+- **MDX Compilation**: Posts are compiled at runtime using `@mdx-js/mdx` with remark-math, remark-gfm, and rehype-katex plugins
+- **Frontmatter fields**:
+  - `title` (required): Post title
+  - `date` (required): Publication date (YYYY-MM-DD format)
+  - `short` (required): Boolean - true for reading lists/short posts, false for full articles
+  - `bskyurl` (optional): Bluesky post URL to enable comments
+  - `cover` (optional): Cover image filename (stored in `public/covers/`)
 
 ### Key Components
-- **SiteBase**: Main layout wrapper component
-- **RetroPhoto**: Image component with retro styling
-- **CommentSection**: Bluesky comments integration (requires `bskyurl` in post frontmatter)
+- `components/SiteBase.tsx` - Main layout wrapper
+- `components/bsky-comments.tsx` - Bluesky comments integration (uses @atproto/api)
+- `components/subscribe-box.tsx` - Newsletter subscription form
+- `components/TableOfContents.tsx` - Auto-generated TOC for long posts
+- `components/FootnoteTooltips.tsx` - Tooltip display for footnotes
+
+### Database
+PostgreSQL database (via `lib/db.ts`) stores contact form submissions and newsletter subscriptions. Requires `POSTGRES_URL` environment variable.
 
 ### Styling
-- **Tailwind CSS**: Custom font families defined in config:
-  - `font-text`: "Ovo" serif
-  - `font-title`: "Prata" serif
-  - `font-marker`: "Permanent Marker" cursive
-  - `font-lightmarker`: "Covered By Your Grace" normal
-- **Responsive Design**: Mobile-first approach with breakpoint-specific layouts
+Tailwind CSS with custom font families:
+- `font-text` - Ovo (body text)
+- `font-title` - Prata (headings)
 
-### Content Configuration
-Site content is centralized in `lib/content.ts` including:
-- Personal information (name, site title)
-- Site URLs for sitemap generation
-- Template flag for reusability
+Fonts loaded via `next/font/google` in `app/layout.tsx`.
 
-### TypeScript Configuration
-- Strict TypeScript setup with path aliases (`@/` for root)
-- Custom type definitions in `types/images.d.ts`
-
-## Development Notes
-
-- Blog posts are automatically processed by Contentlayer and available via `contentlayer/generated`
-- The site supports mathematical notation rendering via KaTeX
-- Images are handled through Next.js optimization with custom typing
-- Comment system integrates with Bluesky when `bskyurl` is provided in post frontmatter
+### Site Configuration
+`lib/content.ts` contains site-wide constants (name, URLs, etc.) for easy customization.

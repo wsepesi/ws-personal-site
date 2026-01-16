@@ -78,7 +78,7 @@ const components = {
   h1: ({ children, id }: any) => <h1 id={id} className="text-3xl font-text font-bold mt-8 mb-4">{children}</h1>,
   h2: ({ children, id }: any) => <h2 id={id} className="text-xl font-text font-bold mt-5 mb-2">{children}</h2>,
   h3: ({ children, id }: any) => <h3 id={id} className="text-lg font-text font-semibold mt-1 mb-1">{children}</h3>,
-  p: ({ children }: any) => <p className="mb-2 leading-normal">{children}</p>,
+  p: ({ children }: any) => <p className="mb-3 leading-normal">{children}</p>,
   ul: ({ children }: any) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
   ol: ({ children }: any) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
   blockquote: ({ children }: any) => {
