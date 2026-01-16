@@ -42,13 +42,16 @@ export default function Home() {
             My interests lie across reinforcement learning, LLMs, and diffusion. I&apos;ve <Link href="/about/work" className="underline hover:italic">worked as an ML engineer and researcher</Link> at Microsoft, Square, and a handful of startups in these areas and beyond. During my time at university, I was the Head Teaching Assistant for a variety of ML courses.
           </p>
           <p className="mt-4">
-            Outside of ML I enjoy music, travel, reading, biking, contemporary art, and speaking French. You can contact me at:
+            Outside of ML I enjoy music, travel, reading, biking, contemporary art, and speaking French. You can find me at:
           </p>
           <ul className="mt-2 list-disc list-inside">
             <li><a href="mailto:hello@william.computer" className="underline hover:italic">hello [at] william [dot] computer</a></li>
             <li><a href="https://twitter.com/robot__fan" className="underline hover:italic">[at] robot__fan</a> on Twitter</li>
             <li><a href="https://github.com/wsepesi" className="underline hover:italic">[at] wsepesi</a> on Github</li>
           </ul>
+          <p className="mt-4">
+            Please reach out if you'd like to chat!
+          </p>
         </div>
         <div className="flex-1">
            <RetroPhoto src={bridge} alt="currently in: san francisco, ca" />
