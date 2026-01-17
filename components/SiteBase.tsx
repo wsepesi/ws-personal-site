@@ -53,7 +53,7 @@ const SiteBase = (props: PageProps) => {
     return (
         <>
             <div className="flex flex-col sm:flex-row sm:pt-[7vh] sm:pl-[9.5vw] 2xl:pl-[15vw] px-[3vw] sm:pr-0 items-center sm:items-start">
-                <div className="sm:min-w-[7vw] w-[50vw] 2xl:w-[6vw] 2xl:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
+                <div className="sm:min-w-[7vw] w-[50vw] 2xl:w-[6vw] 2xl:min-w-0 mx-[3vw] sm:py-[7.5vh] flex flex-row gap-x-4 sm:gap-0 justify-between sm:justify-start sm:flex-col sm:border border-1 border-black sm:mr-[3vw] sm:w-[7.5vw]  sm:mx-0">
                     {Object.entries(directory).map(([path, { name }]) => {
                         const here = (path !== '/' && location.includes(path)) || location === path
                         return name !== "about" ? (

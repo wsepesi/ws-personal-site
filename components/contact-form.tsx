@@ -18,8 +18,8 @@ export function ContactForm() {
 
   if (state?.success) {
     return (
-      <div className="p-4 bg-green-50 border border-green-200 rounded">
-        <p className="text-green-700">{state.message}</p>
+      <div className="p-4 border border-black">
+        <p className="text-stone-600">{state.message}</p>
       </div>
     );
   }
@@ -35,7 +35,7 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-3 py-2 border border-stone-400 rounded bg-white/50 font-text focus:outline-none focus:ring-2 focus:ring-stone-500"
+          className="w-full px-3 py-2 border border-black bg-transparent font-text focus:outline-none focus:ring-1 focus:ring-black"
         />
       </div>
 
@@ -48,7 +48,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          className="w-full px-3 py-2 border border-stone-400 rounded bg-white/50 font-text resize-y focus:outline-none focus:ring-2 focus:ring-stone-500"
+          className="w-full px-3 py-2 border border-black bg-transparent font-text resize-y focus:outline-none focus:ring-1 focus:ring-black"
         />
       </div>
 
@@ -57,7 +57,7 @@ export function ContactForm() {
           type="checkbox"
           id="subscribed"
           name="subscribed"
-          className="w-4 h-4 rounded border-stone-400"
+          className="w-4 h-4 border border-black bg-transparent accent-black"
         />
         <label htmlFor="subscribed" className="text-sm">
           Subscribe to future posts
@@ -65,13 +65,13 @@ export function ContactForm() {
       </div>
 
       {state?.success === false && (
-        <p className="text-sm text-red-600">{state.message}</p>
+        <p className="text-sm text-red-700">{state.message}</p>
       )}
 
       <button
         type="submit"
         disabled={pending}
-        className="px-6 py-2 bg-stone-800 text-white rounded font-text hover:bg-stone-700 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="px-6 py-2 border border-black bg-transparent text-black font-text hover:bg-black hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {pending ? 'Sending...' : 'Send Message'}
       </button>

@@ -70,8 +70,7 @@ export default function Writing() {
     <SiteBase title="Writing" description={`${fullName}'s personal website writing page`}>
       <div className="flex flex-col md:flex-row justify-between mx-[3vw] h-full md:space-x-8">
         <div className="flex flex-col flex-1 min-h-0">
-          <h3>Posts</h3>
-          <hr />
+          <h3 className="pb-2 mb-4 border-b border-black">Posts</h3>
           <div className="overflow-y-auto">
             {regularPosts.map((post, idx) => (
               <PostCard key={idx} {...post} />
@@ -79,8 +78,7 @@ export default function Writing() {
           </div>
         </div>
         <div className="flex flex-col flex-1 min-h-0">
-          <h3>Reading</h3>
-          <hr />
+          <h3 className="pb-2 mb-4 border-b border-black">Reading</h3>
           <div className="overflow-y-auto">
             {shortPosts.map((post, idx) => (
               <PostCard key={idx} {...post} />
