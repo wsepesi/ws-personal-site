@@ -24,11 +24,11 @@ export default function Consulting() {
           </p>
           <br />
           <p>
-            AI is a chaotic field that moves rapidly -- often standard advice flips monthly. I'm engaged with both the academic literature and the engineering best practices of top startups in SF, where I'm based. I can help you navigate this landscape and succeed where others fail.
+            AI is a chaotic field that moves rapidly -- often standard advice flips monthly. I&apos;m engaged with both the academic literature and the engineering best practices of top startups in SF, where I&apos;m based. I can help you navigate this landscape and succeed where others fail.
           </p>
           <br />
           <p>
-            I am currently retained as the Director of AI at Therap Services, a mid-market healthcare software company with over 500 employees transacting billions of dollars of Medicaid billings, where I've led design and development of their flagship AI products.
+            I am currently retained as the Director of AI at Therap Services, a mid-market healthcare software company with over 500 employees transacting billions of dollars of Medicaid billings, where I&apos;ve led design and development of their flagship AI products.
           </p>
         </div>
 
