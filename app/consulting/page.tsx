@@ -41,6 +41,7 @@ export default function Consulting() {
                 <li>Prototyping and proof-of-concept development</li>
                 <li>AI-readiness and transition planning, organizational development, and management consulting</li>
                 <li>Technical due diligence</li>
+                <li>Expert consultation calls</li>
               </ul>
             </div>
 
