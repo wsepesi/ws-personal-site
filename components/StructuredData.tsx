@@ -30,7 +30,7 @@ const StructuredData: React.FC<StructuredDataProps> = (props) => {
       "name": fullName,
       "url": SITE_URL,
       "sameAs": [
-        "https://twitter.com/robot__fan",
+        "https://twitter.com/wsepesi",
         "https://github.com/wsepesi",
         "https://www.linkedin.com/in/william-sepesi/"
       ],

@@ -46,7 +46,7 @@ export default function Home() {
           </p>
           <ul className="mt-2 list-disc list-inside">
             <li><a href="mailto:hello@william.computer" className="underline hover:italic">hello [at] william [dot] computer</a></li>
-            <li><a href="https://twitter.com/robot__fan" className="underline hover:italic">[at] robot__fan</a> on Twitter</li>
+            <li><a href="https://twitter.com/wsepesi" className="underline hover:italic">[at] wsepesi</a> on Twitter</li>
             <li><a href="https://github.com/wsepesi" className="underline hover:italic">[at] wsepesi</a> on Github</li>
           </ul>
           <p className="mt-4">
