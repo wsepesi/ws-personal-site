@@ -9,7 +9,7 @@ import { lower, lowerAndTrimSpaces } from "@/lib/utils"
 import Link from "next/link"
 import { RetroPhoto } from "@/components/retro-photo"
 import SiteBase from "@/components/SiteBase"
-import bridge from '@/photos/bridge.jpg'
+import cambridge from '@/photos/cambridge.png'
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -54,7 +54,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex-1">
-           <RetroPhoto src={bridge} alt="currently in: san francisco, ca" />
+           <RetroPhoto src={cambridge} alt="currently in: cambridge, ma" />
         </div>
       </div>
     </SiteBase>
