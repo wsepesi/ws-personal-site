@@ -93,7 +93,7 @@ const components = {
       const lastChild = childArray[childArray.length - 1]
 
       if (lastChild && typeof lastChild === 'object' && 'props' in lastChild) {
-        const lastParagraphText = lastChild.props.children
+        const lastParagraphText = (lastChild as React.ReactElement<{ children?: unknown }>).props.children
         const text = typeof lastParagraphText === 'string'
           ? lastParagraphText
           : (Array.isArray(lastParagraphText)
@@ -115,7 +115,7 @@ const components = {
       if (lastContentChild && typeof lastContentChild === 'object' && 'props' in lastContentChild) {
         const modifiedChildren = [...contentArray]
         modifiedChildren[modifiedChildren.length - 1] = React.cloneElement(
-          lastContentChild as React.ReactElement,
+          lastContentChild as React.ReactElement<{ className?: string }>,
           { className: 'mb-0 leading-relaxed' }
         )
         quoteContent = modifiedChildren
@@ -136,7 +136,7 @@ const components = {
   code: ({ children, className }: any) => {
     if (!className) {
       return (
-        <code className="bg-gray-100 rounded px-1 py-0.5 text-sm font-mono">
+        <code className="bg-gray-100 rounded-sm px-1 py-0.5 text-sm font-mono">
           {children}
         </code>
       )
@@ -144,7 +144,7 @@ const components = {
     return <code className={className}>{children}</code>
   },
   pre: ({ children }: any) => (
-    <pre className="bg-gray-100 rounded p-4 overflow-x-auto mb-4">{children}</pre>
+    <pre className="bg-gray-100 rounded-sm p-4 overflow-x-auto mb-4">{children}</pre>
   ),
 }
 

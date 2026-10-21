@@ -25,7 +25,7 @@ function PostCard(post: Post) {
   if (hasCover) {
     return (
       <div className="mb-8 flex flex-row gap-4 items-start">
-        <Link href={post.url} className="flex-shrink-0">
+        <Link href={post.url} className="shrink-0">
           <Image
             src={`/covers/${post.cover}`}
             alt={`Cover for ${post.title}`}
@@ -38,7 +38,7 @@ function PostCard(post: Post) {
           <time dateTime={post.date} className="block text-sm text-slate-600">
             {format(parseISO(post.date), 'LLLL d, yyyy')}
           </time>
-          <h2 className="text-lg">
+          <h2 className="text-lg leading-7">
             <Link href={post.url}>
               <p className="text-black underline hover:font-semibold">{post.title}</p>
             </Link>
@@ -53,7 +53,7 @@ function PostCard(post: Post) {
       <time dateTime={post.date} className="block text-sm text-slate-600">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
-      <h2 className="text-lg">
+      <h2 className="text-lg leading-7">
         <Link href={post.url}>
           <p className="text-black underline hover:font-semibold">{post.title}</p>
         </Link>

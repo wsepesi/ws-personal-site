@@ -14,8 +14,8 @@ type Props = {
 export function RetroPhoto(props: Props) {
   const small = (props.small !== undefined) && props.small
   return (
-    <div className="p-4 max-w-sm mx-auto sm:mr-auto lg:mr-10 xl:mr-15 2xl:mr-20">
-      <div className="bg-[#f7f5ed] p-6 bg-opacity-95 shadow" >
+    <div className="p-4 max-w-sm mx-auto sm:mr-auto lg:mr-10 2xl:mr-20">
+      <div className="bg-[#f7f5ed]/95 p-6 shadow-sm" >
         <Image
           alt={props.alt || "Photo of William Sepesi"}
           className={props.alt ? (small ? "mb-2":"mb-5") : (small ? "mb-5":"mb-10")}

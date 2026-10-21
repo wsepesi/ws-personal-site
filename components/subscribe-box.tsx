@@ -38,7 +38,7 @@ export function SubscribeBox({ compact = false }: SubscribeBoxProps) {
             name="email"
             placeholder="your@email.com"
             required
-            className="px-2 py-1 border border-black bg-transparent font-text text-sm w-48 focus:outline-none focus:ring-1 focus:ring-black"
+            className="px-2 py-1 border border-black bg-transparent font-text text-sm w-48 focus:outline-hidden focus:ring-1 focus:ring-black"
           />
           <button
             type="submit"
@@ -73,7 +73,7 @@ export function SubscribeBox({ compact = false }: SubscribeBoxProps) {
           name="email"
           placeholder="your@email.com"
           required
-          className="flex-1 px-3 py-2 border border-black bg-transparent font-text text-sm focus:outline-none focus:ring-1 focus:ring-black"
+          className="flex-1 px-3 py-2 border border-black bg-transparent font-text text-sm focus:outline-hidden focus:ring-1 focus:ring-black"
         />
         <button
           type="submit"

@@ -1,89 +1,117 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
+@plugin 'tailwindcss-animate';
+
+@theme {
+  --font-text: var(--font-ovo), serif;
+  --font-title: var(--font-prata), serif;
+  --font-marker: Permanent Marker, cursive;
+  --font-lightmarker: Covered By Your Grace, normal;
 }
 
-h2[id], h3[id] {
-  scroll-margin-top: 1rem;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-:root {
-    background-color: #efdcb18a;
-    /* background-color: #f5e3b1; */
-    /* background-color: #fffbe7; */
-    /* background-image: url("https://transparenttextures.com/patterns/cream-paper.png"); */
-    /* background-image: url("https://transparenttextures.com/patterns/white-brushed.png"); */
-}
+/* Element defaults live in the base layer so Tailwind utilities (e.g. text-xl) can override them */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-h2 {
-  font-family: 'Ovo', serif;
-  color: black
-}
+  h2[id], h3[id] {
+    scroll-margin-top: 1rem;
+  }
 
-h1 {
-    /* font-family: 'Prata', serif; */
-    font-size: 1.875rem;
+  :root {
+      background-color: #efdcb18a;
+      /* background-color: #f5e3b1; */
+      /* background-color: #fffbe7; */
+      /* background-image: url("https://transparenttextures.com/patterns/cream-paper.png"); */
+      /* background-image: url("https://transparenttextures.com/patterns/white-brushed.png"); */
+  }
+
+  h2 {
+    font-family: 'Ovo', serif;
     color: black
-}
+  }
 
-p {
-  font-family: 'Ovo', serif;
-  color: black;
-  /* line-height: 1.6; */
-  @media (min-width: 768px) {
+  h1 {
+      /* font-family: 'Prata', serif; */
+      font-size: 1.875rem;
+      color: black
+  }
+
+  p {
+    font-family: 'Ovo', serif;
+    color: black;
+    /* line-height: 1.6; */
+    @media (min-width: 768px) {
+      font-size: 1.05rem;
+    }
+  }
+
+  b {
+    font-family: 'Ovo', serif;
+    color: black;
+    font-weight: 900;
     font-size: 1.05rem;
   }
-}
 
-b {
-  font-family: 'Ovo', serif;
-  color: black;
-  font-weight: 900;
-  font-size: 1.05rem;
-}
-
-h3 {
-  font-family: 'Ovo', serif;
-  color: black;
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
-
-h4 {
-  font-family: 'Ovo', serif;
-  color: black;
-  font-size: 1.25rem;
-  margin: 1rem 0;
-}
-
-ul {
-  font-family: 'Ovo', serif;
-  color: black
-}
-
-li {
-  font-family: 'Ovo', serif;
-  color: black;
-  @media (min-width: 768px) {
-    font-size: 1.05rem;
+  h3 {
+    font-family: 'Ovo', serif;
+    color: black;
+    font-size: 1.5rem;
+    margin: 1rem 0;
   }
-}
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+  h4 {
+    font-family: 'Ovo', serif;
+    color: black;
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
 
-/* Target Firefox */
-* {
-  scrollbar-color: transparent transparent; /* thumb and track color */
-}
+  ul {
+    font-family: 'Ovo', serif;
+    color: black
+  }
 
-/* Target Internet Explorer and Edge */
-*::-ms-scrollbar-track {
-  background: transparent;
+  li {
+    font-family: 'Ovo', serif;
+    color: black;
+    @media (min-width: 768px) {
+      font-size: 1.05rem;
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Target Firefox */
+  * {
+    scrollbar-color: transparent transparent; /* thumb and track color */
+  }
+
+  /* Target Internet Explorer and Edge */
+  *::-ms-scrollbar-track {
+    background: transparent;
+  }
 }
 
 /* Footnote reference styling */

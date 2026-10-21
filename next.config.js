@@ -1,7 +1,4 @@
 const createMDX = require('@next/mdx')
-const remarkMath = require('remark-math')
-const remarkGfm = require('remark-gfm')
-const rehypeKatex = require('rehype-katex')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,11 +6,12 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 }
 
+// Plugins are referenced by name so the options stay serializable for Turbopack
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkMath, remarkGfm],
-    rehypePlugins: [rehypeKatex],
+    remarkPlugins: ['remark-math', 'remark-gfm'],
+    rehypePlugins: ['rehype-katex'],
   },
 })
 

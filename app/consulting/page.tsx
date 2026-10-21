@@ -54,7 +54,7 @@ export default function Consulting() {
           </div>
 
           <div className="md:w-[40%]">
-            <div className="bg-[#f7f5ed] p-4 shadow">
+            <div className="bg-[#f7f5ed] p-4 shadow-sm">
               <Image
                 alt="Speaking at Therap National Conference"
                 src={consultingPhoto}

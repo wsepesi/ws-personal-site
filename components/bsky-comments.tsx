@@ -211,7 +211,7 @@ const Comment = ({ comment }: { comment: AppBskyFeedDefs.ThreadViewPost }) => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <p className="text-sm">{comment.post.record.text}</p>
+          <p className="text-sm">{(comment.post.record as AppBskyFeedPost.Record).text}</p>
           <Actions post={comment.post} />
         </Link>
       </div>
@@ -308,5 +308,6 @@ const sortByLikes = (a: unknown, b: unknown) => {
   ) {
     return 0;
   }
-  return (b.post.likeCount ?? 0) - (a.post.likeCount ?? 0);
+  const likes = (t: unknown) => (t as AppBskyFeedDefs.ThreadViewPost).post.likeCount ?? 0;
+  return likes(b) - likes(a);
 };

@@ -35,7 +35,7 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-3 py-2 border border-black bg-transparent font-text focus:outline-none focus:ring-1 focus:ring-black"
+          className="w-full px-3 py-2 border border-black bg-transparent font-text focus:outline-hidden focus:ring-1 focus:ring-black"
         />
       </div>
 
@@ -48,7 +48,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          className="w-full px-3 py-2 border border-black bg-transparent font-text resize-y focus:outline-none focus:ring-1 focus:ring-black"
+          className="w-full px-3 py-2 border border-black bg-transparent font-text resize-y focus:outline-hidden focus:ring-1 focus:ring-black"
         />
       </div>
 
